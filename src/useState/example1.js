@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+//NOTE:- React Hook can only be used inside React function component or a custom React Hook function(function name starting with use keyword).
+//React function component names must start with an uppercase letter
+//React hooks can't be used inside normal function starting with small letters
+
 function expensiveninitialState() {
   return 10;
 }
@@ -13,6 +17,7 @@ const Example1 = () => {
   //*********** OUTPUT -> [10,f] **********
 
   // Destructuring the output array of useState
+  // Destructuring will gi9ve value 10 to count and setter function to setCount
 
   const [count, setCount] = useState(10);
 
