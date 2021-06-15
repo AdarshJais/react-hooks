@@ -1,25 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useCustomHook } from "../useState/useCustomHook";
 
 const Example1 = () => {
   const [values, handleChange] = useCustomHook({ email: "", password: "" });
 
-  useEffect(() => {
-    console.log("mount");
-    return () => {
-      console.log("unmount");
-    };
-  }, [values.email]);
-
+  const inputRef = useRef();
+  const hello = useRef(() => console.log("hello"));
   return (
     <div>
-      <input name="email" value={values.email} onChange={handleChange}></input>
+      <input
+        ref={inputRef}
+        name="email"
+        value={values.email}
+        onChange={handleChange}
+      ></input>
       <input
         name="password"
         type="password"
         value={values.password}
         onChange={handleChange}
       ></input>
+      <button
+        onClick={() => {
+          inputRef.current.focus();
+          hello.current();
+        }}
+      >
+        Call ref
+      </button>
     </div>
   );
 };
