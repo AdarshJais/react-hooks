@@ -7,9 +7,11 @@ import Example1useEffect2 from "./useEffect/example2";
 import Example1useEffect3 from "./useEffect/example3";
 import Example1useEffect4 from "./useEffect/example4";
 import Example1useRef1 from "./useRef/example1";
+import Example1useLayoutEffect1 from "./useLayoutEffect/example1";
+import Example1useCallBack1 from "./useCallBack/example1";
 
 function App() {
-  return <Example1useRef1 />;
+  return <Example1useCallBack1 />;
 }
 
 export default App;
